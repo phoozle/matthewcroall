@@ -30,8 +30,9 @@ twitter_username: phoozle
 github_username:  phoozle
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
+  - jekyll-postcss-v2
   - jekyll-feed
 
 # Exclude from processing.
