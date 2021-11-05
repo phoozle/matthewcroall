@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<article class="text-white">
+  <h1 class="text-white font-light font-sans text-2xl">
+    {{ page.title }}
+  </h1>
+
+  <span class="text-xs text-opacity-80">{{ page.date | date_to_string }}</span>
+
+  <div class="prose text-white sm:subpixel-antialiased md:antialiased leading-snug mt-4">
+    {{ content }}
+  </div>
+</article>

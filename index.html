@@ -5,6 +5,30 @@
 layout: default
 ---
 
-<div class="mt-2 bg-gray-500 light:bg-gray-200 text-red-600">
-  GRAY
+<div class="flex flex-row">
+  <section class="w-1/3 px-4 py-2 rounded space-y-2 dark:bg-gray-900">
+    <p>
+      Howdy,<br>
+      Thanks for stopping by
+    </p>
+
+    <p>
+      Get in touch:
+      <a href="mailto:{{ site.email }}" class="underline">
+        {{ site.email }}
+      </a>
+    </p>
+  </section>
+
+  <section class="w-2/3 ml-4">
+    {% for post in site.posts %}
+      <a href="{{ post.url }}" class="block border-b border-blue-500 py-4 pl-2 group">
+        <span class="text-xl group-hover:underline">{{ post.title }}</span><br>
+
+        <span class="font-sans font-extralight italic text-white text-opacity-50 group-hover:text-opacity-100">
+          {{ post.excerpt | strip_html }}
+        </span>
+      </a>
+    {% endfor %}
+  </section>
 </div>
