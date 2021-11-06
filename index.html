@@ -5,27 +5,29 @@
 layout: default
 ---
 
-<div class="flex flex-row">
-  <section class="w-1/3 px-4 py-2 rounded space-y-2 dark:bg-gray-900">
-    <p>
-      Howdy,<br>
-      Thanks for stopping by
+<div class="flex flex-row h-full">
+  <section class="text-gray-600 mt-4 w-1/3 pr-2 space-y-2 dark:text-white">
+    <h4 class="italic text-light text-2xl mb-4">
+      Thanks for visiting
+    </h4>
+
+    <p class="text-sm">
+      Here you'll find a collectic of my interests including:
     </p>
 
-    <p>
-      Get in touch:
-      <a href="mailto:{{ site.email }}" class="underline">
-        {{ site.email }}
-      </a>
-    </p>
+    <ul class="text-sm list-disc list-inside leading-tight">
+      <li>Ruby on Rails</li>
+      <li>Linux</li>
+      <li>Retro Computing</li>
+    </ul>
   </section>
 
   <section class="w-2/3 ml-4">
     {% for post in site.posts %}
       <a href="{{ post.url }}" class="block border-b border-blue-500 py-4 pl-2 group">
-        <span class="text-xl group-hover:underline">{{ post.title }}</span><br>
+        <span class="font-bold group-hover:underline">{{ post.title }}</span><br>
 
-        <span class="font-sans font-extralight italic text-white text-opacity-50 group-hover:text-opacity-100">
+        <span class="font-extralight italic dark:text-white text-black text-opacity-50 group-hover:text-opacity-100">
           {{ post.excerpt | strip_html }}
         </span>
       </a>
