@@ -25,6 +25,9 @@ url: "http://matthewcroall.com" # the base hostname & protocol for your site, e.
 twitter_username: phoozle
 github_username:  phoozle
 
+collections:
+  - resume
+
 # Build settings
 # theme: minima
 plugins:
