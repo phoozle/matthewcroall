@@ -8,6 +8,9 @@
     <title>Matthew Croall</title>
 
     <link rel="stylesheet" href="/assets/css/main.css?v=">
+
+    <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
+
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -22,23 +25,36 @@
           style="background-image: url('/assets/images/pixels.png'); background-size: 2.5px;"
         ></div>
 
-        <div class="relative z-1 flex items-center max-w-screen-md mx-auto">
-          <h1 class="py-4 text-2xl font-lato">
+        <div
+          class="relative z-1 flex flex-wrap items-center max-w-screen-md mx-auto"
+          x-data="{ open: false }"
+          @keydown.escape="open = false"
+          @click.outside="open = false"
+        >
+          <h1 class="px-4 md:px-0 py-4 md:text-2xl font-lato">
             <a href="/" class="flex items-center p-1 bg-black bg-opacity-0 hover:bg-opacity-50">
               Matthew Croall
             </a>
           </h1>
 
-          <nav>
-            <a href="/resume" class="ml-4 p-1 bg-black bg-opacity-10 hover:bg-opacity-50">
+          <button type="button" class="block ml-auto mr-4 md:hidden" @click="open = !open">
+            <img class="w-8 hover:opacity-80" src="/assets/images/menu.svg" alt="Menu" x-show="!open">
+            <img class="w-8 hover:opacity-80" src="/assets/images/x.svg" alt="Menu" x-show="open">
+          </button>
+
+          <nav
+            class="w-full flex-grow md:block md:items-center md:w-auto"
+            :class="{ 'block shadow-3xl': open, 'hidden': !open }"
+          >
+            <a href="/resume" class="bg-opacity-50 bg-blue-500 active:bg-indigo-800 md:bg-none p-1 pl-4 py-2 block md:pl-0 md:py-0 md:inline md:ml-4 md:bg-black md:bg-opacity-10 md:hover:bg-opacity-50">
               <span class="text-opacity-50 text-white">[</span> resume <span class="text-opacity-50 text-white">]</span>
             </a>
-            <a href="/resume" class="ml-4 p-1 bg-black bg-opacity-10 hover:bg-opacity-50">
+            <a href="/projects" class="bg-opacity-50 bg-blue-500 active:bg-indigo-800 md:bg-none p-1 pl-4 py-2 block md:pl-0 md:py-0 md:inline md:ml-4 md:bg-black md:bg-opacity-10 md:hover:bg-opacity-50">
               <span class="text-opacity-50 text-white">[</span> projects <span class="text-opacity-50 text-white">]</span>
             </a>
           </nav>
 
-          <aside class="ml-auto py-4 flex space-x-4 items-center">
+          <aside class="hidden md:flex ml-auto py-4 space-x-4 items-center">
             <a href="https://github.com/phoozle" target="_blank">
               <img class="w-8 hover:opacity-80" src="/assets/images/github.png" alt="Github">
             </a>
@@ -50,7 +66,7 @@
         </div>
       </header>
 
-      <section class="max-w-screen-md mx-auto flex-grow">
+      <section class="max-w-screen-md mx-4 flex-grow self-center">
         {{ content }}
       </section>
     </div>

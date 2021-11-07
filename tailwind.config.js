@@ -15,7 +15,9 @@ module.exports = {
     }
   },
   variants: {
-    backgroundColor: ["responsive", "hover", "disabled", "focus", "odd", "even", "checked", "dark"],
+    extend: {
+      backgroundColor: ['active'],
+    }
   },
   plugins: [
     require('@tailwindcss/typography')
