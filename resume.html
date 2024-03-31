@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Matthew Croall</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/assets/css/main.css?v=">
+
+    <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="dark:bg-gray-800 dark:text-white font-serif h-screen">
+    <div class="h-full flex flex-col">
+      <header
+        class="z-10 sticky top-0 text-white sm:subpixel-antialiased md:antialiased bg-gradient-to-r from-indigo-800 to-blue-500"
+      >
+        <div
+          class="absolute inset-0 opacity-30"
+          style="background-image: url('/assets/images/pixels.png'); background-size: 2.5px;"
+        ></div>
+
+        <div
+          class="relative z-1 flex flex-wrap items-center max-w-screen-md mx-auto"
+          x-data="{ open: false }"
+          @keydown.escape="open = false"
+          @click.outside="open = false"
+        >
+          <h1 class="px-4 md:px-0 py-4 md:text-2xl font-lato">
+            <a href="/" class="flex items-center p-1 bg-black bg-opacity-0 hover:bg-opacity-50">
+              Matthew Croall
+            </a>
+          </h1>
+
+          <button type="button" class="block ml-auto mr-4 md:hidden" @click="open = !open">
+            <img class="w-8 hover:opacity-80" src="/assets/images/menu.svg" alt="Menu" x-show="!open">
+            <img class="w-8 hover:opacity-80" src="/assets/images/x.svg" alt="Menu" x-show="open">
+          </button>
+
+          <nav
+            class="w-full flex-grow md:block md:items-center md:w-auto"
+            :class="{ 'block shadow-3xl': open, 'hidden': !open }"
+          >
+            <a href="/resume" class="bg-opacity-50 bg-blue-500 active:bg-indigo-800 md:bg-none p-1 pl-4 py-2 block md:pl-0 md:py-0 md:inline md:ml-4 md:bg-black md:bg-opacity-10 md:hover:bg-opacity-50">
+              <span class="text-opacity-50 text-white">[</span> resume <span class="text-opacity-50 text-white">]</span>
+            </a>
+            <a href="/projects" class="bg-opacity-50 bg-blue-500 active:bg-indigo-800 md:bg-none p-1 pl-4 py-2 block md:pl-0 md:py-0 md:inline md:ml-4 md:bg-black md:bg-opacity-10 md:hover:bg-opacity-50">
+              <span class="text-opacity-50 text-white">[</span> projects <span class="text-opacity-50 text-white">]</span>
+            </a>
+          </nav>
+
+          <aside class="hidden md:flex ml-auto py-4 space-x-4 items-center">
+            <a href="https://github.com/phoozle" target="_blank">
+              <img class="w-8 hover:opacity-80" src="/assets/images/github.png" alt="Github">
+            </a>
+
+            <a href="mailto:gliders_justice.07@icloud.com" class="underline">
+              <img class="w-8 hover:opacity-80" src="/assets/images/email.svg" alt="Email me">
+            </a>
+          </aside>
+        </div>
+      </header>
+
+      <section class="max-w-screen-md mx-4 flex-grow self-center">
+        <div class="my-8 flex flex-col w-full space-y-2 font-lato text-center px-8 leading-snug tracking-tight">
+  <p class="text-2xl">
+    Over a decade in software development and system administration
+  </p>
+
+  <p>
+    University of South Australia<br>
+    Bachelor of Information Technology (GPA 5.06)
+  </p>
+</div>
+
+<section class="my-4">
+  <div class="container mx-auto flex flex-col items-start md:flex-row">
+    <div class="ml-0 md:ml-12">
+      <div class="container mx-auto w-full h-full">
+        <div class="relative wrap overflow-hidden h-full dark:text-white">
+          <div class="border-2 border-indigo-800 absolute h-full right-1/2"></div>
+          <div class="border-2 border-blue-500 absolute h-full left-1/2"></div>
+
+          
+            <div class="bg-red mb-8 flex justify-between flex-row-reverse items-center w-full">
+              <div class="order-1 w-5/12"></div>
+              <div data-aos="fade-up" data-aos-offset="300" class="order-1 w-5/12 px-1 py-4 text-right">
+                <p class="mb-3 text-base text-blue-800 dark:text-yellow-200">Adelaide Fringe</p>
+                <h4 class="font-lato font-light text-lg md:text-2xl">Senior Software Engineer</h4>
+                <p class="mb-3 text-xs md:text-base leading-snug text-gray-400 text-opacity-100">
+                  2016-Present
+                </p>
+
+                <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                  <p>Senior software engineer, responsible for the development of in-house software
+at the Adelaide Fringe; most notably the Artist/Venue Registration system (AVR)
+and Adelaide Fringe “open api” used by third-party app developers.</p>
+
+                </p>
+              </div>
+            </div>
+          
+            <div class="bg-red mb-8 flex justify-between  items-center w-full">
+              <div class="order-1 w-5/12"></div>
+              <div data-aos="fade-up" data-aos-offset="300" class="order-1 w-5/12 px-1 py-4 text-left">
+                <p class="mb-3 text-base text-blue-800 dark:text-yellow-200">Katalyst Interactive</p>
+                <h4 class="font-lato font-light text-lg md:text-2xl">Developer</h4>
+                <p class="mb-3 text-xs md:text-base leading-snug text-gray-400 text-opacity-100">
+                  2016
+                </p>
+
+                <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                  <p>Developed web applications for a number of clients large and small
+(including Government), developed and maintained in-house software</p>
+<ul>
+  <li>i.e. Koi (in-house CMS)</li>
+</ul>
+
+                </p>
+              </div>
+            </div>
+          
+            <div class="bg-red mb-8 flex justify-between flex-row-reverse items-center w-full">
+              <div class="order-1 w-5/12"></div>
+              <div data-aos="fade-up" data-aos-offset="300" class="order-1 w-5/12 px-1 py-4 text-right">
+                <p class="mb-3 text-base text-blue-800 dark:text-yellow-200">Secure Cellar Door</p>
+                <h4 class="font-lato font-light text-lg md:text-2xl">Developer</h4>
+                <p class="mb-3 text-xs md:text-base leading-snug text-gray-400 text-opacity-100">
+                  2012-2013
+                </p>
+
+                <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                  <p>Test driven development with Rspec, Capybara and cucumber specs.</p>
+
+                </p>
+              </div>
+            </div>
+          
+            <div class="bg-red mb-8 flex justify-between  items-center w-full">
+              <div class="order-1 w-5/12"></div>
+              <div data-aos="fade-up" data-aos-offset="300" class="order-1 w-5/12 px-1 py-4 text-left">
+                <p class="mb-3 text-base text-blue-800 dark:text-yellow-200">Department for Education and Child Development</p>
+                <h4 class="font-lato font-light text-lg md:text-2xl">IT Technician</h4>
+                <p class="mb-3 text-xs md:text-base leading-snug text-gray-400 text-opacity-100">
+                  2011-2016
+                </p>
+
+                <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                  <p>Maintained systems and network infrastructure. Developed in-house software
+primarily with the Ruby on Rails framework to meet the needs of staff
+administration and student learning.</p>
+
+                </p>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      </section>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        mirror: false,
+        duration: 700,
+        disable: 'mobile',
+        debounceDelay: 500
+      });
+    </script>
+  </body>
+</html>
