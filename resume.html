@@ -2,31 +2,31 @@
 layout: default
 ---
 
+<div class="my-8 flex flex-col w-full space-y-2 font-lato text-center px-8 leading-snug tracking-tight">
+  <p class="text-2xl">
+    Over a decade in software development and system administration
+  </p>
+
+  <p>
+    University of South Australia<br>
+    Bachelor of Information Technology (GPA 5.06)
+  </p>
+</div>
+
 <section class="my-4">
   <div class="container mx-auto flex flex-col items-start md:flex-row">
-    <div class="flex flex-col w-full sticky space-y-2 lg:w-1/3 px-8">
-      <p>
-        Over a decade of experience in software development and system administration
-      </p>
-
-      <p>
-        University of South Australia<br>
-        Bachelor of Information Technology (GPA 5.06)
-      </p>
-    </div>
-
-    <div class="ml-0 md:ml-12 lg:w-2/3 sticky">
+    <div class="ml-0 md:ml-12">
       <div class="container mx-auto w-full h-full">
         <div class="relative wrap overflow-hidden h-full dark:text-white">
           <div class="border-2 border-indigo-800 absolute h-full right-1/2"></div>
           <div class="border-2 border-blue-500 absolute h-full left-1/2"></div>
 
           {% for job in site.resume reversed %}
-            <div class="mb-8 flex justify-between {% cycle 'flex-row-reverse', '' %} items-center w-full">
+            <div class="bg-red mb-8 flex justify-between {% cycle 'flex-row-reverse', '' %} items-center w-full">
               <div class="order-1 w-5/12"></div>
-              <div class="order-1 w-5/12 px-1 py-4 {% cycle 'text-right', 'text-left' %}">
+              <div data-aos="fade-up" data-aos-offset="300" class="order-1 w-5/12 px-1 py-4 {% cycle 'text-right', 'text-left' %}">
                 <p class="mb-3 text-base text-blue-800 dark:text-yellow-200">{{ job.name }}</p>
-                <h4 class="font-bold text-lg md:text-2xl">{{ job.position }}</h4>
+                <h4 class="font-lato font-light text-lg md:text-2xl">{{ job.position }}</h4>
                 <p class="mb-3 text-xs md:text-base leading-snug text-gray-400 text-opacity-100">
                   {{ job.years }}
                 </p>

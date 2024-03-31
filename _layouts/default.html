@@ -7,6 +7,7 @@
 
     <title>Matthew Croall</title>
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="/assets/css/main.css?v=">
 
     <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
@@ -70,5 +71,16 @@
         {{ content }}
       </section>
     </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        mirror: false,
+        duration: 700,
+        disable: 'mobile',
+        debounceDelay: 500
+      });
+    </script>
   </body>
 </html>
