@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+{% for post in site.posts %}
+  <a href="{{ post.url }}" class="block border-b border-blue-500 py-4 pl-2 group">
+    <span class="font-bold group-hover:underline">{{ post.title }}</span><br>
+
+    <span class="font-extralight italic dark:text-white text-black text-opacity-50 group-hover:text-opacity-100">
+      {{ post.excerpt | strip_html }}
+    </span>
+  </a>
+{% endfor %}
