@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="/assets/css/main.css?v={{ site.time | date: '%s' }}">
 
-    <script defer src="https://unpkg.com/alpinejs@3.17.5/dist/cdn.min.js"></script>
-
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -26,33 +24,14 @@
           style="background-image: url('/assets/images/pixels.png'); background-size: 2.5px;"
         ></div>
 
-        <div
-          class="relative z-1 flex flex-wrap items-center max-w-3xl mx-auto"
-          x-data="{ open: false }"
-          @keydown.escape="open = false"
-          @click.outside="open = false"
-        >
+        <div class="relative z-1 flex flex-wrap items-center max-w-3xl mx-auto">
           <h1 class="px-4 md:px-0 py-4 md:text-2xl font-lato">
             <a href="/" class="flex items-center p-1 bg-black/0 hover:bg-black/50">
               Matthew Croall
             </a>
           </h1>
 
-          <button type="button" class="block ml-auto mr-4 md:hidden" @click="open = !open">
-            <img class="w-8 hover:opacity-80" src="/assets/images/menu.svg" alt="Menu" x-show="!open">
-            <img class="w-8 hover:opacity-80" src="/assets/images/x.svg" alt="Menu" x-show="open">
-          </button>
-
-          <nav
-            class="w-full grow md:block md:items-center md:w-auto"
-            :class="{ 'block shadow-3xl': open, 'hidden': !open }"
-          >
-            <a href="/posts" class="active:bg-indigo-800 p-1 pl-4 py-2 block md:pl-0 md:py-0 md:inline md:ml-4">
-              Blog
-            </a>
-          </nav>
-
-          <aside class="hidden md:flex ml-auto py-4 space-x-4 items-center">
+          <aside class="flex ml-auto px-4 md:px-0 py-4 space-x-4 items-center">
             <a href="https://github.com/phoozle" target="_blank">
               <img class="w-8 hover:opacity-80" src="/assets/images/github.png" alt="Github">
             </a>
