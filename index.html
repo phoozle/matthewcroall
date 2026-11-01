@@ -29,11 +29,11 @@ layout: default
               <div data-aos="fade-up" data-aos-offset="300" class="order-1 w-5/12 px-1 py-4 {% cycle 'text-right', 'text-left' %}">
                 <p class="mb-3 text-base text-blue-800 dark:text-yellow-200">{{ job.name }}</p>
                 <h4 class="font-lato font-light text-lg md:text-2xl">{{ job.position }}</h4>
-                <p class="mb-3 text-xs md:text-base leading-snug text-gray-400 text-opacity-100">
+                <p class="mb-3 text-xs md:text-base leading-snug text-gray-400">
                   {{ job.years }}
                 </p>
 
-                <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                <p class="text-sm md:text-base leading-snug text-gray-50">
                   {{ job.content | markdownify }}
                 </p>
               </div>

@@ -21,7 +21,7 @@
 title: Matthew Croall
 email: gliders_justice.07@icloud.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://matthewcroall.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://matthewcroall.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: phoozle
 github_username:  phoozle
 
@@ -31,8 +31,12 @@ collections:
 # Build settings
 # theme: minima
 plugins:
-  - jekyll-postcss-v2
   - jekyll-feed
+
+exclude:
+  - package.json
+  - package-lock.json
+  - mise.toml
 
 # Exclude from processing.
 # The following items will not be processed, by default.

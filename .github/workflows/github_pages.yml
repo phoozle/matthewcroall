@@ -1,6 +1,5 @@
 on:
   push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -9,23 +8,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
 
-    - name: Install Node dependencies
-      run: npm install
+    # Ruby and Node versions come from mise.toml, as they do locally.
+    - uses: jdx/mise-action@v5
 
-    - name: Set up Ruby and the locked gems
-      uses: ruby/setup-ruby@v1
-      with:
-        bundler-cache: true
+    - name: Install dependencies
+      run: |
+        npm ci
+        bundle install
 
     - name: Build the site
-      run: bundle exec jekyll build --future
+      run: npm run build
 
-    # Pull requests only build; only a push to main publishes.
+    # Every branch builds; only a push to main publishes.
     - name: GitHub Pages
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      uses: crazy-max/ghaction-github-pages@v4
+      uses: crazy-max/ghaction-github-pages@v5
       with:
         build_dir: _site/
       env:

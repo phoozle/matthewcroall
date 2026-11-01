@@ -6,7 +6,7 @@ layout: default
   <a href="{{ post.url }}" class="block border-b border-blue-500 py-4 pl-2 group">
     <span class="font-bold group-hover:underline">{{ post.title }}</span><br>
 
-    <span class="font-extralight italic dark:text-white text-black text-opacity-50 group-hover:text-opacity-100">
+    <span class="font-extralight italic text-black/50 dark:text-white/50 group-hover:text-black dark:group-hover:text-white">
       {{ post.excerpt | strip_html }}
     </span>
   </a>

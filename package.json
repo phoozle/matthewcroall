@@ -1,14 +1,13 @@
 {
-  "dependencies": {
-    "postcss-scss": "^4.0.2"
+  "private": true,
+  "scripts": {
+    "css": "tailwindcss -i _css/main.css -o assets/css/main.css --minify",
+    "build": "npm run css && bundle exec jekyll build --future",
+    "serve": "npm run css && (tailwindcss -i _css/main.css -o assets/css/main.css --watch & bundle exec jekyll serve --livereload)"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.4.0",
-    "cssnano": "^5.0.9",
-    "postcss": "^8.3.11",
-    "postcss-cli": "^9.0.1",
-    "postcss-import": "^14.0.2",
-    "tailwindcss": "2.2.19"
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "tailwindcss": "^4.3.3"
   }
 }
